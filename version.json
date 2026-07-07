@@ -1,9 +1,18 @@
 {
   "version": "3.0.1",
-  "firmware_url":     "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.0.1/presenceplatform.bin",
+  "firmware_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.0.1/presenceplatform.bin",
   "firmware_sig_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin.sig",
-  "fs_url":           "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.0.1/presenceplatform.fs.bin",
-  "fs_sig_url":       "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin.sig",
+  "fs_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.0.1/presenceplatform.fs.bin",
+  "fs_sig_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin.sig",
   "release_notes_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/tag/v3.0.1",
-  "min_firmware_for_ota": "2.0.0"
+  "min_firmware_for_ota": "2.0.0",
+  "platforms": {
+    "esp32-s3-eth": {
+      "version": "3.0.2",
+      "firmware_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.0.2/presenceplatform-esp32-s3-eth.bin",
+      "firmware_sig_b64": "uUzAjBly5L0WDyRYBVPVARnHthDQrOhynRQs9uBwf3VQ/ibtgE/4TFIqcyV0+6uxvlJOdggvclHt9usybQPqt4Qsc97rfvlUkf6RHayLYWA8R7TcCY5TJUQ7ue+EdWM0om/awJnc+JrOVGqAPd08Z9kcOV7mDx9wKWv5MnZVjQbA2Qggd6o5NAk3d8+L0+4gFrmiUchgPH+jyA5S7cQMnKT3cAuNbzTv1W52w0hu9T/RqXxWsWFBXR5QM2X9Nn+FZYJEZlq7hl1BJD2vv9+jOL3U0zeJxzd3qaX0IPgAjM29yf9cSBZJfOFFXWo/kesJzqZ2y2Cm93e/Wxa4ArrPEw==",
+      "fs_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.0.2/presenceplatform-esp32-s3-eth.fs.bin",
+      "fs_sig_b64": "E0LMaJmSvYCbwt7MrypUcjQVX9UyM8DwaYJNYvLmpKq3jgv7GT1C/liXPE3I+viyDBNlKmIw/q4Xyrg3STp+7vSwZZvqX5DfhrV9a3Q+4VcMQVdAF4phou2D+4O+yuvxxSGYSG6uw4kD0JiPfUpUcqnvX2qSfHzjB4Vf3heMZvLz14Tec8API0xDRbPgSaxDAIvHQxw4MN3R6p++Rufj1xJ2U1FfwE23Fy0ghuleV49jIVvUlF+yKzEfAXt2O94UlQI53AFBBfMAIzVCMVumCQTfZyNWFpb+7CU7KnEjDLVoZxgAapb3UmSkQ5eFEf6LoP6uYyVrQc+rXsU3HLrWFg=="
+    }
+  }
 }
