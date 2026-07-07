@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PresencePlatform — Web Flasher</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  :root { color-scheme: dark light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #0d1117; color: #e6edf3;
+    min-height: 100vh; display: flex; justify-content: center; padding: 40px 16px;
+  }
+  main { max-width: 620px; width: 100%; }
+  .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #2dd4a7; }
+  h1 { font-size: 1.5rem; font-weight: 700; }
+  h1 small { color: #7d8590; font-weight: 400; font-size: 0.9rem; margin-left: 6px; }
+  .sub { color: #7d8590; margin-bottom: 28px; }
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+    padding: 24px; margin-bottom: 16px;
+  }
+  .ver { display: inline-block; background: #1f6feb26; color: #79c0ff;
+    border: 1px solid #1f6feb66; border-radius: 999px; padding: 2px 12px;
+    font-size: 0.85rem; margin-bottom: 16px; }
+  ol { margin: 0 0 20px 20px; line-height: 1.9; }
+  li strong { color: #e6edf3; }
+  esp-web-install-button::part(button) {
+    background: #2dd4a7; color: #0d1117; font-weight: 700; font-size: 1rem;
+    border-radius: 8px; padding: 12px 28px; border: none; cursor: pointer;
+  }
+  .hint { color: #7d8590; font-size: 0.85rem; margin-top: 14px; line-height: 1.6; }
+  .warn { background: #b4232312; border: 1px solid #f8514966; border-radius: 8px;
+    padding: 12px 14px; font-size: 0.85rem; color: #ffa198; margin-top: 16px; line-height: 1.5; }
+  details { margin-top: 8px; }
+  summary { cursor: pointer; color: #79c0ff; font-size: 0.9rem; }
+  details p { color: #7d8590; font-size: 0.85rem; margin: 8px 0 0 0; line-height: 1.6; }
+  a { color: #79c0ff; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo"><div class="dot"></div><h1>PresencePlatform <small>Web Flasher</small></h1></div>
+  <p class="sub">First-time firmware install for the <strong>Waveshare ESP32-S3-ETH</strong> board. After this one flash, the device updates itself over the air.</p>
+
+  <div class="card">
+    <span class="ver" id="ver">firmware: loading…</span>
+    <ol>
+      <li>Use <strong>Chrome or Edge</strong> on a computer (Web Serial doesn't work on phones/iPads).</li>
+      <li>Connect the board's <strong>USB-C port</strong> to this computer with a <strong>data</strong> cable.</li>
+      <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
+      <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
+      <li>When it reboots, join the <strong>PresencePlatform-Setup</strong> WiFi network it broadcasts and follow the setup portal.</li>
+    </ol>
+    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+    <p class="hint">Board not showing up? Hold the <strong>BOOT</strong> button while plugging in USB, then try Connect again. Still nothing — swap the cable; charge-only cables are the #1 cause.</p>
+    <div class="warn"><strong>Already-configured device?</strong> Choosing "Erase device" wipes its WiFi credentials, admin password, and tracked devices — you'll re-onboard from scratch. Existing devices normally update via <em>Settings → Check for Updates</em> instead of this page.</div>
+    <details>
+      <summary>What gets installed</summary>
+      <p>Bootloader, partition table, OTA data, application, and web dashboard — the same signed artifacts published in the <a href="https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases" target="_blank" rel="noopener">GitHub releases</a>. Future updates are delivered over the air with RSA-2048 signature verification.</p>
+    </details>
+  </div>
+</main>
+<script>
+  fetch('../version.json').then(r => r.json()).then(m => {
+    const s3 = (m.platforms || {})['esp32-s3-eth'] || {};
+    document.getElementById('ver').textContent = 'firmware: v' + (s3.version || m.version);
+  }).catch(() => { document.getElementById('ver').textContent = 'firmware: see releases'; });
+</script>
+</body>
+</html>
