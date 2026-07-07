@@ -54,7 +54,7 @@
       <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
       <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
       <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
-      <li>After setup: S3 boards serve the dashboard at <strong>http://presence.local</strong>; classic boards at <strong>http://presence-platform.local:8090</strong> (note the port).</li>
+      <li>After setup, the portal's success page shows your dashboard address (S3/pro boards live at <strong>presencepro.local</strong>; WiFi boards at <strong>presence.local</strong> on current firmware, <strong>presence-platform.local:8090</strong> on v3.0.1).</li>
     </ol>
     <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
     <p class="hint">Board not showing up? Hold the <strong>BOOT</strong> button while plugging in USB, then try Connect again. Still nothing — swap the cable; charge-only cables are the #1 cause.</p>
