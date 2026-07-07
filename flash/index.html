@@ -44,7 +44,7 @@
 <body>
 <main>
   <div class="logo"><div class="dot"></div><h1>PresencePlatform <small>Web Flasher</small></h1></div>
-  <p class="sub">First-time firmware install for the <strong>Waveshare ESP32-S3-ETH</strong> board. After this one flash, the device updates itself over the air.</p>
+  <p class="sub">First-time firmware install for PresencePlatform boards — works for both the <strong>Waveshare ESP32-S3-ETH</strong> and the <strong>classic WiFi-only ESP32</strong>. The tool detects which board is connected and installs the matching firmware. After this one flash, the device updates itself over the air.</p>
 
   <div class="card">
     <span class="ver" id="ver">firmware: loading…</span>
@@ -53,7 +53,8 @@
       <li>Connect the board's <strong>USB-C port</strong> to this computer with a <strong>data</strong> cable.</li>
       <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
       <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
-      <li>When it reboots, join the <strong>PresencePlatform-Setup</strong> WiFi network it broadcasts and follow the setup portal.</li>
+      <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
+      <li>After setup: S3 boards serve the dashboard at <strong>http://presence.local</strong>; classic boards at <strong>http://presence-platform.local:8090</strong> (note the port).</li>
     </ol>
     <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
     <p class="hint">Board not showing up? Hold the <strong>BOOT</strong> button while plugging in USB, then try Connect again. Still nothing — swap the cable; charge-only cables are the #1 cause.</p>
@@ -67,7 +68,10 @@
 <script>
   fetch('../version.json').then(r => r.json()).then(m => {
     const s3 = (m.platforms || {})['esp32-s3-eth'] || {};
-    document.getElementById('ver').textContent = 'firmware: v' + (s3.version || m.version);
+    const parts = [];
+    if (s3.version) parts.push('S3 v' + s3.version);
+    if (m.version) parts.push('classic v' + m.version);
+    document.getElementById('ver').textContent = 'firmware: ' + (parts.join(' · ') || 'see releases');
   }).catch(() => { document.getElementById('ver').textContent = 'firmware: see releases'; });
 </script>
 </body>

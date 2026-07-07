@@ -1,6 +1,6 @@
 {
-  "name": "PresencePlatform (ESP32-S3-ETH)",
-  "version": "3.0.2",
+  "name": "PresencePlatform",
+  "version": "S3 3.0.2 · classic 3.0.1",
   "new_install_prompt_erase": true,
   "builds": [
     {
@@ -11,6 +11,16 @@
         { "path": "bin/boot_app0.bin", "offset": 57344 },
         { "path": "bin/presenceplatform-esp32-s3-eth.bin", "offset": 65536 },
         { "path": "bin/presenceplatform-esp32-s3-eth.fs.bin", "offset": 8454144 }
+      ]
+    },
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        { "path": "bin/bootloader.bin", "offset": 4096 },
+        { "path": "bin/partitions.bin", "offset": 32768 },
+        { "path": "bin/boot_app0.bin", "offset": 57344 },
+        { "path": "bin/presenceplatform.bin", "offset": 65536 },
+        { "path": "bin/presenceplatform.fs.bin", "offset": 3211264 }
       ]
     }
   ]
