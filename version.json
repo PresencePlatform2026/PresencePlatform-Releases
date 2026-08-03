@@ -1,20 +1,20 @@
 {
-  "version": "3.1.1",
+  "version": "3.1.2",
   "firmware_url":     "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin",
   "firmware_sig_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin.sig",
-  "firmware_sig_b64": "wRbCs91Xbj3o73GoC5Jis4E850WNOSymu4M3vqv2tiacp31pLrR0/YYEsFcVehOAbOWksw95PoP0kr/EQYyZa5HyzIjVzdQzR7qqqKXffMBNb4qBO3/IocgAc+LrF8MwnlVT/eS9mSNux7Q7OPLdlkDqL9JGv9rwx0RcBEQPGLebYoEf+yxyvHA9nHJyyFAVmPwoKF+GesVR9/vJQC4mQCBWQzlo2Qq2qVMIHshkB4O8kCRXu0gxHSwLlzlGbTUkeKsDQw3zLELCxkyl9gm87STAkFKzBQPlIpfjilDmTWaHkBxjbqgfV/653XJYAFrBdLUakVFRubia4OsJ14w2yQ==",
+  "firmware_sig_b64": "jGHYF7OAG+/sFPHYv6Li6K/jvh0BEP0tG0ZAaQUV7vbYuxsw/58bWC3teYux4wge7OBN8ZjznZzQ5a+Ew/NUJOfIJxrbNhdgcTFXuF4nRVFGib6MqypI0MwuGyukVj+uPWF7RKfy9DHLi48vDmRwCseRyY1X/1SvW2SSt9K1tGtZc0CKUuEEc2majtlbEZQMc392MuNexHVnnUx3QXPtlTmyjzqm/yX/7TPqOCkSy35O67AafUOFmnH75WSOuFsJ0yiUFIyMBuwd9F8CsuAhVvf53zNNDQR7LUPRhYC8pesr7WENmqqclEa1wPABT+KRpXC9THx2Lh2jhXbU+WCBjw==",
   "fs_url":           "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin",
   "fs_sig_url":       "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin.sig",
-  "fs_sig_b64":       "WTroeYhozeVeVlul/WIdDsmE9YK8wOPFwOokt4YltFkqtxXCKfis252stTQxTdvkBm5RE81T73AGSdlbhZ+I1CF5bM2iVusBt12g4POnj1T6mfzV3Jg+SUntRgR4fvlDBBghxFjcagKEGSK/siDp1OAjFLg/I3vOz1MAtOIgKXL/u7IIb6Iq+6Qc0HucUe13Ln4GBB/u2g9I1wFhxlNT1lE1WyZNggXkIzxyBkwuUmDtBJY0yIWSQFRgkiQZBOaOOcfJD4kdIU6WNwO4wmBPCYAz8JKto3JzQXMnztkwmLZTudbkMD9rPoznQLHpw5nud8dr9HdAGDqcJbkVhKG9Bw==",
-  "release_notes_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/tag/v3.1.1",
+  "fs_sig_b64":       "tqlehZNNLHWBy6NLuuYxA34d7pXE82Sag/FxVuXZxSqv+TrF5Aks99qKMWnneNh6isd8JmhnxAxzQX80KtYp0cWV2FRGPlXUq5jF5+6DogeTq/4oJ6DMNJaZZyfNOPQfYetnsoRLDZeIyY5G8bk7OQQMiRhL6dYtlUftil1DITOb8ebXseP1lx68DzSS0aBusSm7dzVtBRw8+H+BFmAR6P/BPNibnWQAo/2ZrzXwxejtKMYFLZvH7OGWi8Aq5x6/I+AX7yiDXp4XPHqL8szLDfqzwAa/8DAGTdkTs/iiDKHl+IFwU7ZdezDp05ocPBEQQxLnU9jgaozUx4y/IETn6g==",
+  "release_notes_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/tag/v3.1.2",
   "min_firmware_for_ota": "2.0.0",
   "platforms": {
     "esp32-s3-eth": {
-      "version":          "3.1.1",
-      "firmware_url":     "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.1/presenceplatform-esp32-s3-eth.bin",
-      "firmware_sig_b64": "faJSL95jp+opbYnYBPgbXgKuBPbcO8qiues60D4cEyw6qZyyKlDBInl11MOav5K2NvBb+l4+C6GTFlrEqdY+yyLuPrG5yfsplpKbim2OFWB9PDLRZHgwz3EnxWTNmsHVuPmd/6GVBcHmMtj5alYtxO3AIKs1ckjwllv3j6zIX71pCyR06nSXyqIp/ieTBFZQ4IWu+j8pJ7jz7l4sYShO3aayvySf7rAYLD7ABHWc0cPtYx7yob4cglNNS/6vayiCYtCEglW6LrHjNvRiRfgvjfFG46fWaF34VLSEFdiGHZTF/M0V06/yX1n8ALyz/fFfTY/RI76wm6rnLj0k6zLNVw==",
-      "fs_url":           "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.1/presenceplatform-esp32-s3-eth.fs.bin",
-      "fs_sig_b64":       "eEGU9XGWf4PEmggQo8XMnTc5dqno6CckMNQtfR/GtuyvDoOQ94JFSZ/GiN2+MLugnr6HA0kxTTQTVZbiGQpjR//07uvvj0YFpt0IhZHVq3AnfnMoi/sbNAD4pc2ocEjWM+ddK739OdP5lBLkGx6EqvwARHlWYHV68bwX8y8TqNYHOrEjNABowbbvNlxcbGTXB8HB+q+m8d8miz5/ZANnMhdiCIN/DQRYBtWSdy4cgLrTllCura1Y+24xIGjWyMSli+hiaVJ4Qhhx8HNcrcCuST9YCgqcy8PX2tddb9C8qCEf72QvE01IgQykzw8oTrVPJsVPsT80mPrNwFMrKHHUXQ=="
+      "version":          "3.1.2",
+      "firmware_url":     "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.2/presenceplatform-esp32-s3-eth.bin",
+      "firmware_sig_b64": "S14bZxDcDllqz9qvM9XM9oO+eFPLjJeoosEx3YZtgLdQocebqW1NGZiulnliSVsXA7XbwBD4SHa5m+l7ZKP6DgrsoC93hxWQzumHpvCRtLvEf25hIh31nbR0UIEXElmlEpcDmyg9M2XRPGO7MyCdZf5MrCCMOwWCmyzPseWLGQmbkdA7LVlo0mjRSpRZDQcu8jF82EcJbviy92EgsF6TS5Og/mpq5jrucG4odqbqEt97zAXG+3GI9TkVGEiJtenu5+w96YRdPbMx5iDO8i5XGX/f7jIYxVs+skISsvYGqYNU/VsRVxDoTkaTEDObnnKPRJHc67jDD50R0vOottjtaQ==",
+      "fs_url":           "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.2/presenceplatform-esp32-s3-eth.fs.bin",
+      "fs_sig_b64":       "edyyn07EPP2ADT88NLxWo1NuDMArdoCLSuDgGecViDkzUivWG6DNHJY8C/LE0k4Opyq1cntwFCp0aYCBazk4d1gkOX94MkVqz3udJMgXteEnaUGRgBRR/xyltIxKReuRAKA1ayIjn8R0xjAUiKoo5+BUCZf8NxvpZiIRqT3u31EjkTsMxX3wQYPKZyDSB6hmhLTvtnI1ec2L3i6DMYrK8xyGNTZkhT16QSQ3OEzZvafTmlGGIYvodOoPeiVPVABzJ+PMClXO5pus60iZkP06XZl7MImy4Ky1FnbrE+Hahh/4OW9K70ntn0oAOydk127xZmojE5MK7NewBoOZnhnbdA=="
     }
   }
 }
