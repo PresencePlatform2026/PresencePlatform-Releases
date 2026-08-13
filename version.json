@@ -1,20 +1,20 @@
 {
   "version": "3.1.4",
-  "firmware_url":     "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin",
+  "firmware_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin",
   "firmware_sig_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.bin.sig",
   "firmware_sig_b64": "pQ/QL2CWShZzNVjuP8mcJnWVmvWxCoaOyPlxpTAnJugjD0szMn1wZOTy2R8cK4ypomlce79cYIWVGcHaF5WmSWO5tQ7m4kK9dDpUDvlmf4utbEzq9ykNoZwtFyUfZiFtepAKLMYJK2JKGJroeVYWJ1cECROVrCuS7V58YDtLVy89Tfay3aYzxaUCYq4jxAcf8O5ZexBH/ht5w0b9jpJ1x+OLUWcmhLW3TMAAwraoWg+hiF0xp0n088htc0xRFzWSoWHPHMBvUYe9O/ijYfvLv+9kLocGhTAVgXnCadwib5RSwKShV4yBEzp+JjTKG1qIIgX6tIrXzATPQOKMxLxesA==",
-  "fs_url":           "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin",
-  "fs_sig_url":       "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin.sig",
-  "fs_sig_b64":       "IhEYBPCT2S0GwB9mt2EG/1JhmdZNSyN+y9lbdz9QlVrAfnnLYrUrEAtV/i576xYnIU2OmcG7yfNf/8PRHcBGOM9vZJCaV5CBGymAfWQL+YwCSX/kitGpM4zV1CvW5NECTl6dz4w6pSqQEOv+vt3rqgF+bZeb9lPaIcZ36Sjtj18GR+s3fCoqsEU26Z7lEP5cHWihqoCDuX4bj4WNM1RbEow8tcikkNi0QepGzYxDLrLtLjL4/RB2LY4VX6krDyO/ZLAu8kefL4vY3aCJsB4h/2GZ7BBk/q0kl8fT7E0WOoQ2CiFkShx8yyX97u/Z4NrcGscpb9yzFu44FdD0Q7g61Q==",
+  "fs_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin",
+  "fs_sig_url": "https://raw.githubusercontent.com/PresencePlatform2026/PresencePlatform-Releases/main/presenceplatform.fs.bin.sig",
+  "fs_sig_b64": "IhEYBPCT2S0GwB9mt2EG/1JhmdZNSyN+y9lbdz9QlVrAfnnLYrUrEAtV/i576xYnIU2OmcG7yfNf/8PRHcBGOM9vZJCaV5CBGymAfWQL+YwCSX/kitGpM4zV1CvW5NECTl6dz4w6pSqQEOv+vt3rqgF+bZeb9lPaIcZ36Sjtj18GR+s3fCoqsEU26Z7lEP5cHWihqoCDuX4bj4WNM1RbEow8tcikkNi0QepGzYxDLrLtLjL4/RB2LY4VX6krDyO/ZLAu8kefL4vY3aCJsB4h/2GZ7BBk/q0kl8fT7E0WOoQ2CiFkShx8yyX97u/Z4NrcGscpb9yzFu44FdD0Q7g61Q==",
   "release_notes_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/tag/v3.1.4",
   "min_firmware_for_ota": "2.0.0",
   "platforms": {
     "esp32-s3-eth": {
-      "version":          "3.1.4",
-      "firmware_url":     "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.4/presenceplatform-esp32-s3-eth.bin",
-      "firmware_sig_b64": "orStHA+5mimbcn7sJRSbH7KMxNfTY3NOZdyt5bJ/mHWEXxmpJ387FSrSxUW22PYALtGvA/q89S6UyQpFttr4YeLYNxNlZQu/22dLHuqK8tr4olAiMzAgoKq0gwr8mtAc7A8crpi9jjzbvLvbYIRXxbR6TJAlHlUX7lRYRvAJNybZ82iqphf0Auvlj1n1sLnB2jA4AdDFnwyFv4DP053rtVYBaquH4Z/gSgvSmd9jMnkJ1NBzXTUNnm+GoyE1pcbQTm+zWkJT49nhMzmF0/zSdbRs8+Kbf3F6qYY9ZrsbWdO3OA8MH+dZbkP3+YEzn47znMUAynRy+6zwq9uqxWpxTg==",
-      "fs_url":           "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/v3.1.4/presenceplatform-esp32-s3-eth.fs.bin",
-      "fs_sig_b64":       "FiuuqswcH2ITbF9+1horZSyo+wYTdMMsKAA+oi/ZoTYW9ucYL7cgW49rDJzg3JLWBu5/IeMLBik5NlypF+G0HKYMLNjSLvmJuFV09oiPrVSpFVLG2eNeACEvB+SNNQOpQIpqUyMN4Jf8INiNGc+tyQktQsqTIKSgzlVAGgx14grU4nsIrPU4YXcG1eRzD+2yEsQ2Aw5DIzfffmWUqbO/m/ijPUYtezUnhlBnLKMGntfCJaYRTlh5l5PEGDG5vpMI4uWzkEGYqjHmdOfBZN9QNX8bPv6SDAGIVhwGZUv4vpnvBETuy0uUj08qRjuJpwG01xG6lyU2+vhrxAcF1RMhig=="
+      "version": "3.1.5",
+      "firmware_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.5/presenceplatform-esp32-s3-eth.bin",
+      "firmware_sig_b64": "V19Y4V3avJhTBxnEESkXiS93Kpnw5byOp66qDA3an/DivJamdiu/k+HByk4dJZdsVmm20ZYLB1NEX81nl9TzvhsuKyjyHE2W9ewhiGnqLYpD6xdopOrDngydG7YM+C6dq567Fk1lki4JQ6NWUxuMqP201IE5ZSucF9yW9E2xk1snHvRgAutRGLaie5iy4brC/Nzg+l8jI1FbD625Htr1pP5gttnUIJWxw27JbxVbFYaoTp5y7vnaXlFE9Uq0WFh+oykFGj1DtGdvo7LzRpuz2N1rXCslEndzMUimB89ZXTxj3/8TGbcufBBeaJD1Tw/Hknqp4mG7148vFCdr3ibPzA==",
+      "fs_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.5/presenceplatform-esp32-s3-eth.fs.bin",
+      "fs_sig_b64": "OoL7a+CXav69q6+ykvVhwiJygEWGhxu+pNViMEx7tP+0SF7P9B2WKapidrpnq/r/jpHqTx6NoNWanZ41UvyUzilP1eMezJmNqzhlVTzdJRLFm3ho7zDaiaT63GmzykHwsJZzOMOHD4Mt0lvk4d/xDna/vCn0iF4zwxx+VOWrT0heS2l9AZ5ynkPgKA5J2D0aMVX3FksMhaTO7IMlO/1iHB8Q2rOMVgd7Hrn/ubmnSoRjPjoBblzS09XURsDud7jynVBhD9RCQ8RWCkURi2KIxER7KQwRhHj2MtQr+4ChCiCGGNuCXz9mAURDnczjOPWZpW3S3kRoHdJPkgBzSmEi9w=="
     }
   }
 }
