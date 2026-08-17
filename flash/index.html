@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<!--
+  PROPOSED REPLACEMENT for flash/index.html in the PUBLIC releases repo
+  (PresencePlatform2026/PresencePlatform-Releases).
+
+  This file is NOT built or deployed from the private repo. CI writes only
+  flash/manifest*.json and flash/bin/* — index.html is hand-maintained in the
+  public repo and must be copied there manually.
+
+  NOTE: this page is served from a PUBLIC repo, so these comments are readable
+  by anyone via view-source. Keep internal codenames and project names out of
+  them.
+
+  Why a picker: ESP Web Tools selects a build purely from the chipFamily the
+  ROM reports. Presence Pro (with a W5500) and Presence Pro WiFi (without) both
+  report ESP32-S3, so no single manifest can tell them apart — whether a W5500
+  is populated is a runtime fact, invisible to the bootloader.
+
+  Both S3 choices serve the SAME esp32-s3-eth binary today; it probes for the
+  W5500 at boot and adapts. A wrong pick therefore still produces a correctly
+  behaving device — the picker is advisory, not a safety gate.
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -26,6 +47,8 @@
   .ver { display: inline-block; background: #1f6feb26; color: #79c0ff;
     border: 1px solid #1f6feb66; border-radius: 999px; padding: 2px 12px;
     font-size: 0.85rem; margin-bottom: 16px; }
+  h2 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .step-note { color: #7d8590; font-size: 0.85rem; margin-bottom: 14px; line-height: 1.6; }
   ol { margin: 0 0 20px 20px; line-height: 1.9; }
   li strong { color: #e6edf3; }
   esp-web-install-button::part(button) {
@@ -38,25 +61,118 @@
   details { margin-top: 8px; }
   summary { cursor: pointer; color: #79c0ff; font-size: 0.9rem; }
   details p { color: #7d8590; font-size: 0.85rem; margin: 8px 0 0 0; line-height: 1.6; }
+  details ul { color: #7d8590; font-size: 0.85rem; margin: 8px 0 0 18px; line-height: 1.7; }
   a { color: #79c0ff; }
+
+  /* ── Product picker ────────────────────────────────────────────────── */
+  .picker { display: grid; gap: 10px; margin-bottom: 4px; }
+  .choice { display: block; position: relative; cursor: pointer; }
+  .choice input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+  .choice-inner {
+    display: block; border: 1px solid #30363d; border-radius: 8px;
+    padding: 12px 14px 12px 40px; background: #0d1117; transition: border-color .12s, background .12s;
+  }
+  .choice-inner::before {
+    content: ""; position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    width: 14px; height: 14px; border-radius: 50%; border: 1px solid #6e7681; background: #0d1117;
+  }
+  .choice:hover .choice-inner { border-color: #6e7681; }
+  .choice input:checked + .choice-inner { border-color: #2dd4a7; background: #2dd4a70d; }
+  .choice input:checked + .choice-inner::before { border-color: #2dd4a7; background: #2dd4a7; box-shadow: inset 0 0 0 3px #0d1117; }
+  .choice input:focus-visible + .choice-inner { outline: 2px solid #79c0ff; outline-offset: 2px; }
+  .choice-name { display: block; font-weight: 700; font-size: 0.95rem; }
+  .choice-desc { display: block; color: #7d8590; font-size: 0.85rem; margin-top: 2px; line-height: 1.5; }
+  .panel[hidden] { display: none; }
+  .prompt { color: #7d8590; font-size: 0.9rem; padding: 14px 0 2px; }
+  hr { border: none; border-top: 1px solid #30363d; margin: 20px 0; }
 </style>
 </head>
 <body>
 <main>
   <div class="logo"><div class="dot"></div><h1>PresencePlatform <small>Web Flasher</small></h1></div>
-  <p class="sub">First-time firmware install for PresencePlatform boards — works for both the <strong>Waveshare ESP32-S3-ETH</strong> and the <strong>classic WiFi-only ESP32</strong>. The tool detects which board is connected and installs the matching firmware. After this one flash, the device updates itself over the air.</p>
+  <p class="sub">First-time firmware install for PresencePlatform boards. Pick your product below — the ESP32-S3 boards look identical to the flashing tool, so it can't choose for you. After this one flash, the device updates itself over the air.</p>
 
   <div class="card">
     <span class="ver" id="ver">firmware: loading…</span>
-    <ol>
-      <li>Use <strong>Chrome or Edge</strong> on a computer (Web Serial doesn't work on phones/iPads).</li>
-      <li>Connect the board's <strong>USB-C port</strong> to this computer with a <strong>data</strong> cable.</li>
-      <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
-      <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
-      <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
-      <li>After setup, the portal's success page shows your dashboard address (S3/pro boards live at <strong>presencepro.local</strong>; WiFi boards at <strong>presence.local</strong> on current firmware, <strong>presence-platform.local:8090</strong> on v3.0.1).</li>
-    </ol>
-    <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+
+    <h2>1. Choose your product</h2>
+    <p class="step-note">Not sure? See <em>How do I tell them apart?</em> below.</p>
+
+    <div class="picker" role="radiogroup" aria-label="Choose your product">
+      <label class="choice">
+        <input type="radio" name="product" value="classic">
+        <span class="choice-inner">
+          <span class="choice-name">Presence</span>
+          <span class="choice-desc">Classic ESP32 · WiFi only</span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="product" value="pro">
+        <span class="choice-inner">
+          <span class="choice-name">Presence Pro</span>
+          <span class="choice-desc">ESP32-S3 · Ethernet (RJ45) and PoE</span>
+        </span>
+      </label>
+      <label class="choice">
+        <input type="radio" name="product" value="wifi">
+        <span class="choice-inner">
+          <span class="choice-name">Presence Pro WiFi</span>
+          <span class="choice-desc">ESP32-S3 · WiFi only, no Ethernet</span>
+        </span>
+      </label>
+    </div>
+
+    <details>
+      <summary>How do I tell them apart?</summary>
+      <ul>
+        <li><strong>Presence</strong> — the smaller classic ESP32 board, micro-USB or USB-C, no metal network jack.</li>
+        <li><strong>Presence Pro</strong> — ESP32-S3 with a metal <strong>RJ45 Ethernet jack</strong> on the board, and a microSD slot. This is the Waveshare ESP32-S3-ETH.</li>
+        <li><strong>Presence Pro WiFi</strong> — ESP32-S3 with <strong>no RJ45 jack</strong>, typically two USB-C ports side by side.</li>
+      </ul>
+      <p>Both ESP32-S3 products currently install the same firmware image, which detects the Ethernet chip at startup and configures itself accordingly — so if you pick the wrong one of those two, the device still works correctly. Only the classic ESP32 is a genuinely different build.</p>
+    </details>
+
+    <hr>
+
+    <h2>2. Install</h2>
+    <div id="prompt" class="prompt">Choose a product above to continue.</div>
+
+    <div class="panel" id="panel-classic" hidden>
+      <ol>
+        <li>Use <strong>Chrome or Edge</strong> on a computer (Web Serial doesn't work on phones/iPads).</li>
+        <li>Connect the board's <strong>USB port</strong> to this computer with a <strong>data</strong> cable.</li>
+        <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "Silicon Labs CP210x" or "USB Serial Device").</li>
+        <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
+        <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
+        <li>After setup, the dashboard lives at <strong>presence.local</strong> (<strong>presence-platform.local:8090</strong> on v3.0.1).</li>
+      </ol>
+      <esp-web-install-button manifest="manifest-classic.json"></esp-web-install-button>
+    </div>
+
+    <div class="panel" id="panel-pro" hidden>
+      <ol>
+        <li>Use <strong>Chrome or Edge</strong> on a computer (Web Serial doesn't work on phones/iPads).</li>
+        <li>Connect the board's <strong>USB-C port</strong> to this computer with a <strong>data</strong> cable.</li>
+        <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
+        <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
+        <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
+        <li>After setup, the dashboard lives at <strong>presencepro.local</strong> once Ethernet is linked.</li>
+      </ol>
+      <esp-web-install-button manifest="manifest-pro.json"></esp-web-install-button>
+    </div>
+
+    <div class="panel" id="panel-wifi" hidden>
+      <ol>
+        <li>Use <strong>Chrome or Edge</strong> on a computer (Web Serial doesn't work on phones/iPads).</li>
+        <li>Connect the board's <strong>USB-C port</strong> to this computer with a <strong>data</strong> cable. If the board has two USB-C ports, use the one marked <strong>USB</strong>.</li>
+        <li>Click <strong>Connect</strong> below and pick the board's serial port (shows as "USB Serial Device" or "USB JTAG/serial debug unit").</li>
+        <li>Choose <strong>Install</strong>. For a brand-new board, pick <strong>"Erase device"</strong> when offered. Takes ~3 minutes.</li>
+        <li>When it reboots, join the <strong>PresenceSetup_xxxx</strong> WiFi network it broadcasts and follow the setup portal.</li>
+        <li>After setup, the dashboard lives at <strong>presence.local</strong>. This product has no Ethernet, so no wired settings are shown.</li>
+      </ol>
+      <esp-web-install-button manifest="manifest-wifi.json"></esp-web-install-button>
+    </div>
+
     <p class="hint">Board not showing up? Hold the <strong>BOOT</strong> button while plugging in USB, then try Connect again. Still nothing — swap the cable; charge-only cables are the #1 cause.</p>
     <div class="warn"><strong>Already-configured device?</strong> Choosing "Erase device" wipes its WiFi credentials, admin password, and tracked devices — you'll re-onboard from scratch. Existing devices normally update via <em>Settings → Check for Updates</em> instead of this page.</div>
     <details>
@@ -66,13 +182,50 @@
   </div>
 </main>
 <script>
-  fetch('../version.json').then(r => r.json()).then(m => {
-    const s3 = (m.platforms || {})['esp32-s3-eth'] || {};
-    const parts = [];
-    if (s3.version) parts.push('S3 v' + s3.version);
-    if (m.version) parts.push('classic v' + m.version);
-    document.getElementById('ver').textContent = 'firmware: ' + (parts.join(' · ') || 'see releases');
-  }).catch(() => { document.getElementById('ver').textContent = 'firmware: see releases'; });
+  // Per-product firmware versions, read from the published version.json:
+  // flat fields describe the classic build, platforms["esp32-s3-eth"] the S3 one.
+  var versions = { classic: null, pro: null, wifi: null };
+  var verEl = document.getElementById('ver');
+  var promptEl = document.getElementById('prompt');
+  var panels = {
+    classic: document.getElementById('panel-classic'),
+    pro:     document.getElementById('panel-pro'),
+    wifi:    document.getElementById('panel-wifi')
+  };
+
+  function renderVersion(product) {
+    if (product && versions[product]) {
+      verEl.textContent = 'firmware: v' + versions[product];
+      return;
+    }
+    var parts = [];
+    if (versions.pro) parts.push('S3 v' + versions.pro);
+    if (versions.classic) parts.push('classic v' + versions.classic);
+    verEl.textContent = 'firmware: ' + (parts.join(' · ') || 'see releases');
+  }
+
+  function select(product) {
+    Object.keys(panels).forEach(function (key) {
+      panels[key].hidden = (key !== product);
+    });
+    promptEl.hidden = true;
+    renderVersion(product);
+  }
+
+  document.querySelectorAll('input[name="product"]').forEach(function (input) {
+    input.addEventListener('change', function () { select(input.value); });
+  });
+
+  fetch('../version.json').then(function (r) { return r.json(); }).then(function (m) {
+    var s3 = (m.platforms || {})['esp32-s3-eth'] || {};
+    versions.classic = m.version || null;
+    versions.pro = s3.version || null;
+    versions.wifi = s3.version || null;
+    var checked = document.querySelector('input[name="product"]:checked');
+    renderVersion(checked ? checked.value : null);
+  }).catch(function () {
+    verEl.textContent = 'firmware: see releases';
+  });
 </script>
 </body>
 </html>
