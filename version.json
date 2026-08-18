@@ -10,11 +10,11 @@
   "min_firmware_for_ota": "2.0.0",
   "platforms": {
     "esp32-s3-eth": {
-      "version": "3.1.6",
-      "firmware_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.6/presenceplatform-esp32-s3-eth.bin",
-      "firmware_sig_b64": "SJYx9dyH2EucbE1s8JcE1F6NZtXIvxtvgDcsOPliXzmnIu8hhzI81iSjpFYDUgEYPB0zs9IxsTQYGz0DtdegkkwgNUPZWRM2w9n9d0NOq6yVhBkIYbsafbEsrQ9vXhKO0IsKgPoX7bp4gSxWX4q27B8MvsCtPCuso/QIMZ6ae0W9OXMJRoW4lAkjbuSOvlNlzPK2RvnCT7S95aOxlgzY5sec0Gki+A4d7INKPjnifgPXtUag3eNu+Qr3pDO4GOibduUbM0tIS/4q5gCxVQx4oblZw5dtz7Myw8VHNpXqdOVZ8/+VghwW1XlkrN6TPe5lR5SdMxPqefHq62p/nYiucw==",
-      "fs_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.6/presenceplatform-esp32-s3-eth.fs.bin",
-      "fs_sig_b64": "n11dsLz6o9Y5CyKVY5cHasNTZ55p0na8WusTLLiF9mApF+hPgypS7UguBU1Wxi01SXbstlfGPnM62OXlCV2v6kPDo7yOU+KYCi+fdvvqqj1oqj4xLDFj5G2U4GgoyvyzsCQUycf6ln2sGXo523k6fDKRrtzdmBqPrJ9LcKS/qDCc3zOB7kfO9b1qCyJZxGIWyRRDf5BgguiNHLiYvPd+VXfVHF3r1lbnwxrsER8w2Fpy5fHkc8SKnkRKlkiNlXut+pnOAX8qr+40NkCxaFMcuhqwwVDRLqDXHKztvZc048PRyG5EcuFOnKZ2UCyTAlzI1VKa1VF9A0HIrcXJIV5ZNA=="
+      "version": "3.1.7",
+      "firmware_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.7/presenceplatform-esp32-s3-eth.bin",
+      "firmware_sig_b64": "paHrMfSQ4dGljzTNbvOdRXqQn+37n14Dw43l9RgkF9ZgNoTbVmqOli2ZuEOTmAQQyyJmwafflKQk2Jid65vg42Kqf1dMcAO3K4JjpARkNBgF+Hx7ucpmshtggaBL64CTs2CptRtt4aKkX3XZtQ53g3A1mo1g1XZRa9TvNTKoUxmJU006/GYOvauwoR6E2mCFIzluiwJaySlOVhutGXgJcwt6UZHyNa/u2r08EkVFhRqEKyhnxgbDOyci1zn3G1jqy11OsITMJ0EO6EqPma/mjYMwnXFNRwlEh8h/BhGGqT28qfqA52hqPDEYcoAy7y1aaJcNh74d3fztJDXREJvrbw==",
+      "fs_url": "https://github.com/PresencePlatform2026/PresencePlatform-Releases/releases/download/s3-v3.1.7/presenceplatform-esp32-s3-eth.fs.bin",
+      "fs_sig_b64": "T8vqvcXDySuVNjLTa5fROnPUsdMhHjSN20QEaSLiUkjl/4M2w2o9kHYJBpPgRl1QV4BCmr2TiCCpC3RfgjJrY5RpXASlxra6nP/KuJe20kpVRSlqAc5Cka6fU4ALcWcN1Z3nRC4074R/6njOqxjv9KD7WRsRHHrG034udbRfPq71Dy7/Wh5a41kAh/BlnPRLTqLAO7u3Pt0BzuXALn0xis6Y2Q3JkILCOTUaKQ0fLPoZJj6cwW1ctrz2gCV4tb7ll+WyMbFc6uVdQhr9JcCBB4bzjK6AS/wkHe4Dq1RC+Rypar7O2NVRjDZ9asb6vytg/P7IBNHFDrVwF22aD60lVQ=="
     }
   }
 }
