@@ -1,32 +1,32 @@
-﻿{
-    "name":  "Presence Pro WiFi",
-    "version":  "3.1.5",
-    "new_install_prompt_erase":  true,
-    "builds":  [
-                   {
-                       "chipFamily":  "ESP32-S3",
-                       "parts":  [
-                                     {
-                                         "path":  "bin/bootloader-esp32-s3-eth.bin",
-                                         "offset":  0
-                                     },
-                                     {
-                                         "path":  "bin/partitions-esp32-s3-eth.bin",
-                                         "offset":  32768
-                                     },
-                                     {
-                                         "path":  "bin/boot_app0.bin",
-                                         "offset":  57344
-                                     },
-                                     {
-                                         "path":  "bin/presenceplatform-esp32-s3-eth.bin",
-                                         "offset":  65536
-                                     },
-                                     {
-                                         "path":  "bin/presenceplatform-esp32-s3-eth.fs.bin",
-                                         "offset":  8454144
-                                     }
-                                 ]
-                   }
-               ]
+{
+  "name": "Presence Pro WiFi",
+  "version": "3.1.6",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "bin/bootloader-esp32-s3-eth.bin",
+          "offset": 0
+        },
+        {
+          "path": "bin/partitions-esp32-s3-eth.bin",
+          "offset": 32768
+        },
+        {
+          "path": "bin/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "bin/presenceplatform-esp32-s3-eth.bin",
+          "offset": 65536
+        },
+        {
+          "path": "bin/presenceplatform-esp32-s3-eth.fs.bin",
+          "offset": 8454144
+        }
+      ]
+    }
+  ]
 }

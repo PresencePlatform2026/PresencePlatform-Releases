@@ -1,6 +1,6 @@
 {
   "name": "PresencePlatform",
-  "version": "S3 3.1.5 \u00b7 classic 3.1.4",
+  "version": "S3 3.1.6 \u00b7 classic 3.1.4",
   "new_install_prompt_erase": true,
   "builds": [
     {
